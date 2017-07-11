@@ -1,0 +1,34 @@
+body{
+    margin-top:70px;
+    margin-bottom: 70px;
+}
+/*start起始页*/
+.center_start{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.center_start h1{
+    font-size: 80px;
+    font-weight: 900;
+    color:#307AB9;
+}     
+/*页头*/
+/*页尾*/
+.footer-menu{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.footer-menu li{
+    width:30%;
+    text-align: center;
+    display: inline-block;
+    /*padding-top:15px;*/
+    line-height:60px;
+}
+.footer-menu li a{
+    color:#737478;
+}

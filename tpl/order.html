@@ -1,0 +1,40 @@
+<!--页头-->
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+    <!--<div class="panel panel-default">-->
+    <form ng-hide="orderResult">
+        <!--名称-->
+        <div class="form-group">
+            <label for="u_name">联系人:</label>
+            <input type="text" id="u_name" class="form-control" placeholder="旭旭" ng-model="order.user_name"/>
+        </div>
+        <!--性别-->
+        <label>性别</label>
+        <div class="radio-inline">
+            <label>
+                <input type="radio" value="1" ng-model="order.sex"/>男
+            </label>
+        </div>
+        <div class="radio-inline">
+            <label>
+                <input type="radio" value="2" ng-model="order.sex"/>女
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="u_phone">联系电话:</label>
+            <input type="text" id="u_phone" class="form-control" placeholder="12345678900" ng-model="order.phone"/>
+        </div>
+        <div class="form-group">
+            <label for="u_Address">送餐地址:</label>
+            <textarea id="u_Address" class="form-control" placeholder="万寿路128号" ng-model="order.addr"></textarea>
+        </div>
+        <button class="btn btn-success btn-block" ng-click="submitOrder()">确定下单</button>
+    </form>
+    <!--</div>-->
+    <div ng-show="orderResult">{{orderResult}}
+        <button ng-click="jump('/MyOrder')" class="btn btn-block btn-success">去我的订单查看</button>
+    </div>
+
+</div>
+<!--页尾-->
+<div ng-include="'tpl/include/footer.html'"></div>

@@ -1,0 +1,55 @@
+<!--页头-->
+<div ng-include="'tpl/include/header.html'"></div>
+<!--列表-->
+<div class="container">
+    <!--搜索框-->
+    <div class="form-group has-feedback">
+        <input type="text" placeholder="请输入菜品或者原材料的名称" class="form-control" ng-model="kw"/>
+        <span class="form-control-feedback glyphicon glyphicon-search"></span>
+    </div>
+    <!--列表-->
+    <div class="list-group">
+        <a href="#/Detail/{{dish.did}}" class="list-group-item" ng-repeat="dish in dishList">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object" ng-src="img/{{dish.img_sm}}" alt=""/>
+                </div>
+                <div class="media-body">
+                    <h1>{{dish.name}}</h1>
+                    <p>{{dish.material}}</p>
+                    <p>{{dish.price | currency :'¥'}}</p>
+                </div>
+            </div>
+        </a>
+        <!--<a href="#/Detail" class="list-group-item">-->
+            <!--<div class="media">-->
+                <!--<div class="media-left media-middle">-->
+                    <!--<img class="media-object" src="img/p0281.jpg" alt=""/>-->
+                <!--</div>-->
+                <!--<div class="media-body">-->
+                    <!--<h1>鱼香肉丝</h1>-->
+                    <!--<p>原材料</p>-->
+                    <!--<p>30块</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+        <!--<a href="#/Detail" class="list-group-item">-->
+            <!--<div class="media">-->
+                <!--<div class="media-left media-middle">-->
+                    <!--<img class="media-object" src="img/p0281.jpg" alt=""/>-->
+                <!--</div>-->
+                <!--<div class="media-body">-->
+                    <!--<h1>鱼香肉丝</h1>-->
+                    <!--<p>原材料</p>-->
+                    <!--<p>30块</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    </div>
+    <button class="btn btn-success btn-block" ng-click="loadMore()" ng-show="hasMore">
+        加载更多
+    </button>
+    <p ng-hide="hasMore">没有更多数据可以加载啦</p>
+</div>
+<!--页尾-->
+<div ng-include="'tpl/include/footer.html'"></div>
